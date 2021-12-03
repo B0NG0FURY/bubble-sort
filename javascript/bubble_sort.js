@@ -1,5 +1,18 @@
 function bubbleSort(arr) {
-  // type your code here
+  if (arr.length === 0) {
+    return arr;
+  } else {
+    for (i = 0; i < arr.length; i++) {
+      let j = 0;
+      while (j < arr.length) {
+        if (arr[j] > arr[j + 1]) {
+          [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        }
+        j++;
+      }
+    }
+  }
+  return arr;
 }
 
 if (require.main === module) {
@@ -26,4 +39,8 @@ if (require.main === module) {
 module.exports = bubbleSort;
 
 // Please add your pseudocode to this file
+// 1. Use for loop to iterate over Array.
+// 2. If value of arr[i + 1] < arr[i], use destructuring: [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]].
+// 3. If array is empty, return empty array.
+// 4. Once done iterating, return arr.
 // And a written explanation of your solution

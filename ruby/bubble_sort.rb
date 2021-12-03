@@ -1,5 +1,18 @@
 def bubble_sort(arr)
-  # type your code in here
+  return arr if arr.empty?
+
+  i = 0
+  while i < arr.length
+    s = 0
+    while s < arr.length - 1
+      if arr[s] > arr[s + 1]
+        arr[s], arr[s + 1] = arr[s + 1], arr[s]
+      end
+      s += 1
+    end
+    i += 1
+  end
+  arr
 end
 
 if __FILE__ == $PROGRAM_NAME
